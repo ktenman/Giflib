@@ -1,2 +1,2 @@
-# Giflib
-Gifs library web application using spring-boot-starter-web
+# Gif Library
+Gif library web application using spring-boot-starter-web

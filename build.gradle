@@ -20,8 +20,8 @@ repositories {
 }
 
 ext.libraries = [
-        spring_boot_starter_web: "org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE",
-        junit        : "junit:junit:4.12"
+        spring_boot_starter_web: 'org.springframework.boot:spring-boot-starter-thymeleaf',
+        junit        : 'junit:junit:4.12'
 ]
 
 dependencies {
