@@ -9,9 +9,9 @@ repositories {
     mavenCentral()
 }
 
-ext.libraries = [ // Groovy map literal
-                  spring_webmvc: "org.springframework:spring-webmvc:4.2.2.RELEASE",
-                  junit: "junit:junit:4.12"
+ext.libraries = [
+        spring_webmvc: "org.springframework:spring-webmvc:4.2.2.RELEASE",
+        junit        : "junit:junit:4.12"
 ]
 
 dependencies {
