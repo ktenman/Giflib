@@ -10,11 +10,11 @@ repositories {
 }
 
 ext.libraries = [
-        spring_webmvc: "org.springframework:spring-webmvc:4.2.2.RELEASE",
+        spring_boot_starter_web: "org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE",
         junit        : "junit:junit:4.12"
 ]
 
 dependencies {
-    compile libraries.spring_webmvc
+    compile libraries.spring_boot_starter_web
     testCompile libraries.junit
 }
