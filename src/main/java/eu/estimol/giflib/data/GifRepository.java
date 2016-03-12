@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang3.RandomUtils;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class GifRepository {
-    List<Gif> ALL_GIFS;
+    ArrayList<Gif> ALL_GIFS = new ArrayList<>();
 
     public GifRepository() throws IOException {
         Path dir = Paths.get("build\\resources\\main\\static\\gifs");
@@ -29,28 +29,48 @@ public class GifRepository {
             // I/O error encounted during the iteration, the cause is an IOException
             throw ex.getCause();
         }
-        Random random = new Random();
-        int minDay = (int) LocalDate.of(1900, 1, 1).toEpochDay();
-        int maxDay = (int) LocalDate.of(2015, 1, 1).toEpochDay();
-        long randomDay = minDay + random.nextInt(maxDay - minDay);
 
-        LocalDate randomBirthDate = LocalDate.ofEpochDay(randomDay);
-        for (Path r: result) {
+        for (Path r: result)
             ALL_GIFS.add(new Gif(
                     FilenameUtils.getBaseName(r.getFileName().toString()),
-                    randomBirthDate,
+                    getRandomLocalDate(),
                     getRandomString() + " " + getRandomString(),
-                    random.nextBoolean()
+                    getRandomBoolean()
             ));
-        }
 
+        for (Gif gif: ALL_GIFS) {
+            System.out.println(gif.toString());
+        }
+    }
+
+
+    public Gif findByName(String name){
+        for(Gif gif : ALL_GIFS){
+            if (gif.getName().equals(name)){
+                return gif;
+            }
+        }
+        return null;
     }
 
     private String getRandomString() {
         return new BigInteger(130, new SecureRandom()).toString(32);
     }
 
-    public static void main(String[] args) throws IOException {
-        new GifRepository();
+    private boolean getRandomBoolean(){
+        return new Random().nextBoolean();
     }
+
+    private LocalDate getRandomLocalDate(){
+        Random random = new Random();
+        int minDay = (int) LocalDate.of(1900, 1, 1).toEpochDay();
+        int maxDay = (int) LocalDate.of(2015, 1, 1).toEpochDay();
+        long randomDay = minDay + random.nextInt(maxDay - minDay);
+        LocalDate randomBirthDate = LocalDate.ofEpochDay(randomDay);
+        return randomBirthDate;
+    }
+
+//    public static void main(String[] args) throws IOException {
+//        new GifRepository();
+//    }
 }

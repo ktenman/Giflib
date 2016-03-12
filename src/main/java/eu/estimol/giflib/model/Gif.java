@@ -48,4 +48,14 @@ public class Gif {
     public void setFavorite(boolean favorite) {
         this.favorite = favorite;
     }
+
+    @Override
+    public String toString() {
+        return "Gif{" +
+                "name='" + name + '\'' +
+                ", dateUploaded=" + dateUploaded +
+                ", username='" + username + '\'' +
+                ", favorite=" + favorite +
+                '}';
+    }
 }
