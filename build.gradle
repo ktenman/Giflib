@@ -20,15 +20,16 @@ repositories {
 }
 
 ext.libraries = [
-        spring_boot_starter_web: 'org.springframework.boot:spring-boot-starter-thymeleaf:1.3.3.RELEASE',
-        junit        : 'junit:junit:4.12',
-        commons_io: 'commons-io:commons-io:2.4',
-        commons_lang: 'org.apache.commons:commons-lang3:3.4'
+        spring_boot_starter_web :'org.springframework.boot:spring-boot-starter-thymeleaf:1.3.3.RELEASE',
+        junit         :'junit:junit:4.12',
+        commons       : ['commons-io:commons-io:2.4', 'org.apache.commons:commons-lang3:3.4'],
+//        hibernate     :'org.hibernate:hibernate-core:5.1.0.Final'
+        hibernate       :'org.hibernate:hibernate-core:5.0.3.Final'
 ]
 
 dependencies {
     compile libraries.spring_boot_starter_web
     testCompile libraries.junit
-    compile libraries.commons_io
-    compile libraries.commons_lang
+    compile libraries.commons
+    compile libraries.hibernate
 }

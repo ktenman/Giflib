@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @Controller
 public class GifController {
 
@@ -14,7 +16,9 @@ public class GifController {
     private GifRepository gifRepository;
 
     @RequestMapping("/")
-    public String listGifs(){
+    public String listGifs(ModelMap modelMap){
+        ArrayList<Gif> allGifs = gifRepository.getAllGifs();
+        modelMap.put("gifs", allGifs);
         return "home";
     }
 

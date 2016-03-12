@@ -70,7 +70,11 @@ public class GifRepository {
         return randomBirthDate;
     }
 
-//    public static void main(String[] args) throws IOException {
+    public ArrayList<Gif> getAllGifs() {
+        return ALL_GIFS;
+    }
+
+    //    public static void main(String[] args) throws IOException {
 //        new GifRepository();
 //    }
 }
