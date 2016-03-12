@@ -22,7 +22,7 @@ public class GifAdder {
 		t1.commit();
 		vabrik.close();
 	}
-	public static void main(String[] args){
-		new GifAdder();
-	}
+//	public static void main(String[] args){
+//		new GifAdder();
+//	}
 }

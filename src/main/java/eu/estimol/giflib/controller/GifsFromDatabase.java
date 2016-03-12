@@ -39,9 +39,7 @@ public class GifsFromDatabase {
         factory.close();
     }
 
-
-
-    public static void main(String[] args) {
-        new GifsFromDatabase();
-    }
+//    public static void main(String[] args) {
+//        new GifsFromDatabase();
+//    }
 }
