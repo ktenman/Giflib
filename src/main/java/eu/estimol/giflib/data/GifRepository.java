@@ -56,6 +56,7 @@ public class GifRepository {
         return new Random().nextInt(number)+1;
     }
 
+
     private String getRandomString() {
         return new BigInteger(130, new SecureRandom()).toString(32);
     }
