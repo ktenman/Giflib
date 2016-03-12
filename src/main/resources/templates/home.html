@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+
+  <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" th:href="@{/app.css}" />
-    <title>Document</title>
-</head>
-<body>
+    <title>Gifs Library</title>
+  </head>
+
+  <body>
     <h1>Home</h1>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus qui quidem quod unde? Adipisci dolores quo reprehenderit sint temporibus! Obcaecati possimus quidem reprehenderit. Dicta, dolore doloribus labore laborum nemo voluptas.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus qui quidem quod unde? Adipisci dolores quo reprehenderit sint temporibus! Obcaecati possimus quidem reprehenderit. Dicta, dolore doloribus labore laborum nemo voluptas.
     </p>
-    <img alt="picture" src="http://placehold.it/300x300/5fcf80/fffff" />
-</body>
+    <img alt="picture" th:src="@{/gifs/compiler-bot.gif}" />
+  </body>
+
 </html>
