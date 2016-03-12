@@ -19,10 +19,6 @@ public class GifController {
     public String gifDetails (ModelMap modelMap){
         Gif gif = new Gif("compiler-bot", LocalDate.of(2016,2,13),"Konstantin Tenman", true);
         modelMap.put("gif",gif);
-        System.out.println(modelMap.toString());
-        for (int i = 0; i < modelMap.size(); i++) {
-            System.out.println(modelMap.get(i).toString());
-        }
         return "gif-details";
     }
 

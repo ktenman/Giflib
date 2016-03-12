@@ -1,6 +1,7 @@
 package eu.estimol.giflib.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Gif {
     private String name;
@@ -23,8 +24,9 @@ public class Gif {
         this.name = name;
     }
 
-    public LocalDate getDateUploaded() {
-        return dateUploaded;
+    public String getDateUploaded() {
+        return dateUploaded.format(DateTimeFormatter.ofPattern("dd. MMM yyyy"));
+        //return dateUploaded;
     }
 
     public void setDateUploaded(LocalDate dateUploaded) {
