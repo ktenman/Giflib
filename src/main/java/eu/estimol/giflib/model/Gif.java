@@ -1,15 +1,42 @@
 package eu.estimol.giflib.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@Entity
+@Table(name = "gifs")
 public class Gif {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "dateUploaded")
     private LocalDate dateUploaded;
+    @Column(name = "username")
     private String username;
+    @Column(name = "favorite")
     private boolean favorite;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Gif(String name, LocalDate dateUploaded, String username, boolean favorite) {
+        this.name = name;
+        this.dateUploaded = dateUploaded;
+        this.username = username;
+        this.favorite = favorite;
+    }
+
+    public Gif() {
         this.name = name;
         this.dateUploaded = dateUploaded;
         this.username = username;
