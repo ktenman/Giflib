@@ -43,7 +43,6 @@ public class GifRepository {
         }
     }
 
-
     public Gif findByName(String name){
         for(Gif gif : ALL_GIFS){
             if (gif.getName().equals(name)){
