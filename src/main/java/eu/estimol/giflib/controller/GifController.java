@@ -25,13 +25,13 @@ public class GifController {
 //        return "gif-details";
 //    }
 
-    @RequestMapping(value = "/gif/{gifName}", method = RequestMethod.GET)
+    @RequestMapping("/gif/{gifName}")
     public String gifDetailsByName (ModelMap modelMap, @PathVariable String gifName){
         Gif gif = gifRepository.findByName(gifName);
-        if (gif==null){
+        if (gif == null){
             return "home";
         }
-        modelMap.put("gif",gif);
+        modelMap.put("gif", gif);
         return "gif-details";
     }
 
