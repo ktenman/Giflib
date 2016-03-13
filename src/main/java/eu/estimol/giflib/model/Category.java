@@ -1,8 +1,5 @@
 package eu.estimol.giflib.model;
 
-/**
- * Created by Konstantin on 13.03.2016.
- */
 public class Category {
     private int id;
     private String name;
