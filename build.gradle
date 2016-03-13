@@ -24,7 +24,7 @@ ext.libraries = [
         junit         :'junit:junit:4.12',
         commons       : ['commons-io:commons-io:2.4', 'org.apache.commons:commons-lang3:3.4'],
 //        hibernate     :'org.hibernate:hibernate-core:5.1.0.Final'
-        hibernate       :'org.hibernate:hibernate-core:5.0.3.Final',
+     //   hibernate       :'org.hibernate:hibernate-core:5.0.3.Final',
         mysql           :'mysql:mysql-connector-java:5.1.37'
 ]
 
@@ -32,6 +32,7 @@ dependencies {
     compile libraries.spring_boot_starter_web
     testCompile libraries.junit
     compile libraries.commons
-    compile libraries.hibernate
+   // compile libraries.hibernate
     compile libraries.mysql
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
 }
