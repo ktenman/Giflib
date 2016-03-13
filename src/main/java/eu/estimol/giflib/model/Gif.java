@@ -20,6 +20,9 @@ public class Gif {
     private String username;
     @Column(name = "favorite")
     private boolean favorite;
+    @Lob
+    @Column(name = "content", unique = false, nullable = false, length = 100000)
+    private byte[] content;
 
     public int getId() {
         return id;
@@ -27,6 +30,14 @@ public class Gif {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public byte[] getContent() {
+        return content;
+    }
+
+    public void setContent(byte[] content) {
+        this.content = content;
     }
 
     public Gif(String name, LocalDate dateUploaded, String username, boolean favorite) {
